@@ -10,7 +10,7 @@ def runGUI(playerDict,npcDict):
 
     guiWindow.title("Mystos")
     guiWindow.minsize(800,450)
-
+# NEEDS to be restuctured to clearly list. Experimental "works but not pretty yet"
     charstatDisp = tkinter.Label(guiWindow,text=playerDict).grid(row=1,column=0,rowspan=4,columnspan=1)
     spaceMid= tkinter.Label(guiWindow,text="         ").grid(row=1,column=1,rowspan=2,columnspan=3)
     spaceTop= tkinter.Label(guiWindow,text="      ").grid(row=0,column=0,rowspan=1,columnspan=5)

@@ -1,5 +1,5 @@
 import json
-
+#Unfinished save system, stores to JSON file
 def loadsaveGame( _charStats):     
     mdb_playername=_charStats["playername"]
     mdb_playerpass=_charStats["password"]
@@ -27,7 +27,7 @@ def loadsaveGame( _charStats):
                 return saved_Characters[mdb_playername]
         
     except:
-
+# Creates Json File if it doesn't exist
         with open("mystosxcharsaves.json",'w') as character_SaveFile:
 
             saved_Characters = json.dump(mdb_CharDict,character_SaveFile)
@@ -44,6 +44,3 @@ def loadsaveGame( _charStats):
 
                 saved_Characters = json.update(mdb_CharDict)
                 return saved_Characters[mdb_playername]
-    finally:
-
-        

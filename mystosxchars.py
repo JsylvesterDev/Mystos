@@ -2,7 +2,7 @@ import random
 import json
 class playercharacter():
     
-    
+    # character dictionary of stats setting defaulkt values
     characterstats_dictionary = { 
         "level" : 1,
         "experience":0.00,
@@ -31,11 +31,11 @@ class playercharacter():
         "locationX" : 0.0 ,
         "locationY" : 0.0,
         }
-    
+    # Method that prints player stats
     def getStats():
     
         return playercharacter.characterstats_dictionary
-    
+    # level up logic with stat distribution 
     def addLevel():
         playercharacter.characterstats_dictionary["level"]+=1
         playercharacter.characterstats_dictionary["exptolvl"]*=2
@@ -95,7 +95,7 @@ class playercharacter():
             playercharacter.calcStats()
 
 
-
+# Produces a random enemy every time completely modulate using the lists 
 class proceduralEnemy:
     enemyNames= ["Goblin", "Skeleton", "Blob","Zombie"]
     enemyPrefix=["Lazy","Rude","Strong","Fire", "Ice", "Poison", "Elder"]
@@ -110,7 +110,7 @@ class proceduralEnemy:
             else:
                 return nname
         def enemyStats(enemy_lvl=character_lvl, enemy_prefix=0, enemy_name=0, enemy_suffix=0, enemyFinal=""):
-            
+            #Generate monster stats based on what monster is generated
             newEnemy_dictionary={
                 "enemyname":enemyFinal,
                 "health" : (enemy_lvl*10)+((enemy_prefix+enemy_suffix)*enemy_name+1),
@@ -124,7 +124,7 @@ class proceduralEnemy:
                 "critmulti" : (enemy_prefix+enemy_suffix)*enemy_name+1,
             }
             return newEnemy_dictionary
-
+# prevents character from encountering monster that is too strong
         if character_lvl <= 1:
             enemy=""
             _y=random.randint(0,len(proceduralEnemy.enemyNames)-1)
